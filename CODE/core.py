@@ -4,10 +4,6 @@ import json
 from datetime import datetime
 import difflib
 
-
-
-
-
 def is_directory(path):
     return os.path.isdir(path)
 
