@@ -1,0 +1,10 @@
+README.md
+setup.py
+CODE/__init__.py
+CODE/core.py
+CODE/test.py
+gitsy.egg-info/PKG-INFO
+gitsy.egg-info/SOURCES.txt
+gitsy.egg-info/dependency_links.txt
+gitsy.egg-info/entry_points.txt
+gitsy.egg-info/top_level.txt

@@ -6,8 +6,8 @@ class GitsyCommand:
     def __init__(self, root_dir):
         self.root_dir = os.path.abspath(root_dir)
         self.code_dir = os.path.join(self.root_dir, '.code')
-        self.objects_dir = os.path.join(self.pyvcs_dir, 'objects')
-        self.refs_dir = os.path.join(self.pyvcs_dir, 'refs')
+        self.objects_dir = os.path.join(self.code_dir, 'objects')
+        self.refs_dir = os.path.join(self.code_dir, 'refs')
 
     def add(self):
         stream = os.popen('git add .')
