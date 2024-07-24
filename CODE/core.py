@@ -20,5 +20,5 @@ class GitsyCommand:
         self.commit(message)
         stream = os.popen('git push origin main')
         stream.read()
-        return 1
+
 

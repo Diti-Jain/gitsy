@@ -21,8 +21,8 @@ def execute_command(args):
     command = args.command
 
     if command == 'push':
-        push_id= gs.push(args.message)
-        print("successful"+ push_id)
+        gs.push(args.message)
+        print("successful")
 
 
 
