@@ -3,7 +3,7 @@ try:
     stream = os.popen('git add .')
     stream.read()
 
-    stream = os.popen(r'git commit -m "checking for git auth"')
+    stream = os.popen(r'git commit -m "basic push feature implemented"')
     stream.read()
 
     stream = os.popen('git push origin main')
