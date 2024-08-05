@@ -13,7 +13,7 @@ try:
     stream = os.popen(r'git commit -m "basic push feature implemented"')
     stream.read()
 
-    stream = os.popen('git push origin main')
+    stream = os.popen('git push origin head')
     stream.read()
 
 
