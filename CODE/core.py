@@ -15,10 +15,18 @@ class GitsyCommand:
     def commit(self,message):
         stream = os.popen(r'git commit -m "'+ message + '"')
         stream.read()
-    def push(self, message):
+    def push(self, message,branch):
         self.add()
         self.commit(message)
-        stream = os.popen('git push origin main')
+        if branch != None:
+            self.change_branch(branch)
+        stream = os.popen('git push origin head')
         stream.read()
 
-
+    def change_branch(self,branch):
+        try:
+            stream = os.popen('git checkout ' + branch)
+            stream.read()
+        except:
+            stream = os.popen('git checkout -b '+ branch)
+            stream.read()

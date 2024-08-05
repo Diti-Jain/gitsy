@@ -12,7 +12,7 @@ try:
     stream = os.popen('git add .')
     stream.read()
 
-    stream = os.popen(r'git commit -m "basic push feature implemented"')
+    stream = os.popen(r'git commit -m "newbranch testing "')
     stream.read()
 
     stream = os.popen('git push origin head')
