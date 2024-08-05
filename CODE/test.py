@@ -2,10 +2,10 @@ import os
 try:
     try:
 
-        stream = os.popen('git checkout -b newbranch')
+        stream = os.popen('git checkout  newbranch')
         stream.read()
     except:
-        stream = os.popen('git checkout newbranch')
+        stream = os.popen('git checkout  -b newbranch')
         stream.read()
 
 
