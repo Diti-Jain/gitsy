@@ -2,12 +2,12 @@ import os
 try:
     try:
 
-        stream = os.popen('git checkout  newbranch')
+        stream = os.popen('git checkout newbranch')
         stream.read()
     except:
-        stream = os.popen('git checkout  -b newbranch')
-        stream.read()
 
+        stream = os.popen('git checkout -b newbranch')
+        stream.read()
 
     stream = os.popen('git add .')
     stream.read()
@@ -17,6 +17,8 @@ try:
 
     stream = os.popen('git push origin head')
     stream.read()
+
+
 except:
     text="GitHub not authenticated"
     cmd = "echo {} ".format(text)
