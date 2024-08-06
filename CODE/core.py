@@ -19,8 +19,16 @@ class GitsyCommand:
         self.add()
         self.commit(message)
         if branch !=None:
-            stream=os.popen('git push origin  ' + branch)
-            stream.read()
+            try:
+                stream=os.popen('git push -f origin  ' + branch)
+                stream.read()
+            except:
+                stream=os.popen('git checkout -b ' + branch)
+                stream.read()
+
+                stream=os.popen('git push origin  ' + branch)
+                stream.read()
+
         else:
             stream = os.popen('git push origin head')
             stream.read()
