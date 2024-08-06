@@ -23,12 +23,15 @@ class GitsyCommand:
             try:
                 stream=os.popen('git push -f origin  ' + branch)
                 stream.read()
+                print("HI2")
             except:
                 stream=os.popen('git checkout -b ' + branch)
                 stream.read()
+                print("HI3")
 
                 stream=os.popen('git push origin  ' + branch)
                 stream.read()
+
 
         else:
             stream = os.popen('git push origin head')
