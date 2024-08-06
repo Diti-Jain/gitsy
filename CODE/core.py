@@ -19,6 +19,7 @@ class GitsyCommand:
         self.add()
         self.commit(message)
         if branch !=None:
+            print("HI")
             try:
                 stream=os.popen('git push -f origin  ' + branch)
                 stream.read()
