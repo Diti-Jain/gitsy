@@ -9,6 +9,7 @@ def main():
 
     push_parser=subparsers.add_parser('push',help='Push changes to a branch')
     push_parser.add_argument('message', help='The commit message')
+
     push_parser.add_argument('-b','--branch',default= None ,  help='The branch to push to')
     push_parser.add_argument('-t','--time',default=time.strftime("%H:%M", time.localtime()), help='The time you want to push your commit')
 
