@@ -12,7 +12,7 @@ def main():
 
     push_parser=subparsers.add_parser('push',help='Push changes to a branch')
     push_parser.add_argument('message', help='The commit message')
-    push_parser.add_argument('--optional-branch',default= None ,  help='The branch to push to')
+    push_parser.add_argument('-b','--branch',default= None ,  help='The branch to push to')
 
 
     args = parser.parse_args()
@@ -23,7 +23,7 @@ def execute_command(args):
     command = args.command
 
     if command == 'push':
-        branch = args.optional_branch if args.optional_branch else None
+        branch = args.branch if args.branch else None
         gs.push(args.message,branch)
         print("successful")
 
