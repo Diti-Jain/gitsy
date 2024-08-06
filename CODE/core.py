@@ -1,7 +1,5 @@
 import os
-
-
-
+import subprocess
 class GitsyCommand:
     def __init__(self, root_dir):
         self.root_dir = os.path.abspath(root_dir)
@@ -18,21 +16,19 @@ class GitsyCommand:
     def push(self, message,branch):
         self.add()
         self.commit(message)
-        if branch !=None:
-            print("HI")
+        if branch:
             try:
-                stream=os.popen('git push -f origin  ' + branch)
-                stream.read()
+                # Attempt to push to the specified branch
+                subprocess.run(["git", "push", "origin", branch], check=True)
                 print("HI2")
-            except:
-                stream=os.popen('git checkout -b ' + branch)
-                stream.read()
-                print("HI3")
-
-                stream=os.popen('git push origin  ' + branch)
-                stream.read()
-
-
+            except subprocess.CalledProcessError:
+                try:
+                    # If push fails, try creating and checking out a new branch
+                    subprocess.run(["git", "checkout", "-b", branch], check=True)
+                    subprocess.run(["git", "push", "-f", "origin", branch], check=True)
+                    print("HI3")
+                except subprocess.CalledProcessError as e:
+                    print(f"Failed to push to or create branch '{branch}': {e}")
         else:
             stream = os.popen('git push origin head')
             stream.read()
