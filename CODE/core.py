@@ -61,8 +61,9 @@ class GitsyCommand:
             message=self.automessage()
         subprocess.run(["git", "commit", "-m", message], check=True)
 
-    def push(self, message, branch, time1,file):
-        self.add(file)
+    def push(self, message, branch, time1,file,na):
+        if not na:
+            self.add(file)
         self.commit(message)
 
         while True:
