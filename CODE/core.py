@@ -6,14 +6,16 @@ class GitsyCommand:
     def __init__(self, repo_path):
         self.repo_path = repo_path
 
-    def add(self):
-        subprocess.run(["git", "add", "."], check=True)
+    def add(self,file):
+
+        subprocess.run(["git", "add"]+ file, check=True)
+
 
     def commit(self, message):
         subprocess.run(["git", "commit", "-m", message], check=True)
 
-    def push(self, message, branch, time1):
-        self.add()
+    def push(self, message, branch, time1,file):
+        self.add(file)
         self.commit(message)
 
         while True:

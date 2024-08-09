@@ -12,14 +12,13 @@ def main():
 
     push_parser.add_argument('-b','--branch',default= None ,  help='The branch to push to')
     push_parser.add_argument('-t','--time',default=time.strftime("%H:%M", time.localtime()), help='The time you want to push your commit')
-    push_parser.add_argument('-f','--file',default='.', help='Specific file name to push')
+    push_parser.add_argument('-f','--file',nargs='+' ,default='.', help='Specific file name to push')
     args = parser.parse_args()
     execute_command(args)
 
 def execute_command(args):
     gs = GitsyCommand(os.getcwd())
     command = args.command
-
     if command == 'push':
         file=args.file if args.file else '.'
         time=args.time if args.time else time.strftime("%H:%M", time.localtime())
