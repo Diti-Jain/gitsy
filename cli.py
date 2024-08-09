@@ -12,7 +12,7 @@ def main():
 
     push_parser.add_argument('-b','--branch',default= None ,  help='The branch to push to')
     push_parser.add_argument('-t','--time',default=time.strftime("%H:%M", time.localtime()), help='The time you want to push your commit')
-
+    push_parser.add_argument('-f','--file',default='.', help='Specific file name to push')
     args = parser.parse_args()
     execute_command(args)
 
@@ -21,9 +21,10 @@ def execute_command(args):
     command = args.command
 
     if command == 'push':
+        file=args.file if args.file else '.'
         time=args.time if args.time else time.strftime("%H:%M", time.localtime())
         branch = args.branch if args.branch else None
-        gs.push(args.message,branch,time)
+        gs.push(args.message,branch,time,file)
         print("successful")
 
 if __name__ == "__main__":
