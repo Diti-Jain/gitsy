@@ -73,7 +73,6 @@ class GitsyCommand:
             time.sleep(30)
         print(f"Current time ({current_time}) is now greater than or equal to the scheduled time ({time1}).")
 
-
         if branch:
             try:
                 print(f"Attempting to push to branch: {branch}")
