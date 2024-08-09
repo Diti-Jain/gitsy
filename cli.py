@@ -9,11 +9,10 @@ def main():
 
     push_parser=subparsers.add_parser('push',help='Push changes to a branch')
     push_parser.add_argument('-m','--message',default=None,  help='The commit message')
-
-
     push_parser.add_argument('-b','--branch',default= None ,  help='The branch to push to')
     push_parser.add_argument('-t','--time',default=time.strftime("%H:%M", time.localtime()), help='The time you want to push your commit')
     push_parser.add_argument('-f','--file',nargs='+' ,default=None, help='Specific file name to push')
+
     args = parser.parse_args()
     execute_command(args)
 

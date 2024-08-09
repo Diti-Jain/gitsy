@@ -18,7 +18,6 @@ class GitsyCommand:
         untracked = []
         others = []
 
-        # Parse each line of the output
         for line in git_status_output.splitlines():
             arr=line.split()
             status=arr[0]
@@ -36,9 +35,7 @@ class GitsyCommand:
             else:
                 others.append(f"{status}: {file_name}")
 
-        # Construct the commit message
         commit_message_parts = []
-
         if added:
             commit_message_parts.append(f"Added: {', '.join(added)}")
         if modified:
@@ -53,21 +50,15 @@ class GitsyCommand:
             commit_message_parts.append(f"Other changes: {', '.join(others)}")
         return "; ".join(commit_message_parts)
 
-
-
-
-
     def add(self,file):
         if file==None:
             subprocess.run(['git','add','.'],check=True)
         else:
             subprocess.run(["git", "add"]+ file, check=True)
 
-
     def commit(self, message):
         if message==None:
             message=self.automessage()
-
         subprocess.run(["git", "commit", "-m", message], check=True)
 
     def push(self, message, branch, time1,file):
@@ -79,7 +70,6 @@ class GitsyCommand:
             if current_time >= time1:
                 break
             time.sleep(30)
-
         print(f"Current time ({current_time}) is now greater than or equal to the scheduled time ({time1}).")
 
         if branch:
@@ -100,6 +90,3 @@ class GitsyCommand:
             stream = os.popen('git push origin HEAD')
             output = stream.read()
             print(output)
-
-
-
