@@ -91,3 +91,10 @@ class GitsyCommand:
             stream = os.popen('git push origin HEAD')
             output = stream.read()
             print(output)
+
+    def fetch(self):
+        subprocess.run(["git","fetch"])
+
+    def pull(self):
+        self.fetch()
+        subprocess.run(["git","pull"])
