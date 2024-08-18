@@ -76,6 +76,7 @@ class GitsyCommand:
         if branch:
             try:
                 print(f"Attempting to push to branch: {branch}")
+                subprocess.run(["git","checkout",branch],check=True)
                 subprocess.run(["git", "push", "origin", branch], check=True)
                 print("Push to specified branch successful (HI2).")
             except subprocess.CalledProcessError:
