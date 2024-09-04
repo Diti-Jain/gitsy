@@ -99,3 +99,11 @@ class GitsyCommand:
     def pull(self):
         self.fetch()
         subprocess.run(["git","pull"])
+
+    def init(self):
+        subprocess.run(['git','init'])
+    
+    def add_origin(self,url):
+        self.init()
+        subprocess.run(["git","branch","-M","main"],check=True)
+        subprocess.run(['git','remote','add','origin',url],check=True)

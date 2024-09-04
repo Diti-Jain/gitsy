@@ -16,6 +16,8 @@ def main():
 
     pull_parser=subparsers.add_parser('pull',help='pulls from the branch')
 
+    origin_parser=subparsers.add_parser('init',help='To add a github repo to a folder')
+
     args = parser.parse_args()
     execute_command(args)
 
@@ -31,6 +33,8 @@ def execute_command(args):
         print("successful")
     elif command == 'pull':
         gs.pull()
+    elif command == 'init':
+        gs.add_origin()
 
 
 if __name__ == "__main__":
