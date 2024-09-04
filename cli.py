@@ -34,7 +34,8 @@ def execute_command(args):
     elif command == 'pull':
         gs.pull()
     elif command == 'init':
-        gs.add_origin()
+        url=args.init if args.init else None
+        gs.add_origin(url)
 
 
 if __name__ == "__main__":
