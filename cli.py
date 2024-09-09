@@ -23,6 +23,8 @@ def main():
     args = parser.parse_args()
     execute_command(args)
 
+
+
 def execute_command(args):
     gs = GitsyCommand(os.getcwd())
     command = args.command
