@@ -18,6 +18,7 @@ def main():
 
     origin_parser=subparsers.add_parser('init',help='To add a github repo to a folder')
     origin_parser.add_argument('-u','--url',default=None,help="Add the url to repo")
+    #for screen sharing 
 
 
     args = parser.parse_args()
