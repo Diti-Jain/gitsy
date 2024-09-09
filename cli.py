@@ -14,8 +14,6 @@ def main():
     push_parser.add_argument('-f','--file',nargs='+' ,default=None, help='Specific file name to push')
     push_parser.add_argument('-na',action='store_true',help='To avoid the add stage')
 
-
-
     pull_parser=subparsers.add_parser('pull',help='pulls from the branch')
 
     origin_parser=subparsers.add_parser('init',help='To add a github repo to a folder')
