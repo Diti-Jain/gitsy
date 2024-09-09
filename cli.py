@@ -13,6 +13,7 @@ def main():
     push_parser.add_argument('-t','--time',default=time.strftime("%H:%M", time.localtime()), help='The time you want to push your commit')
     push_parser.add_argument('-f','--file',nargs='+' ,default=None, help='Specific file name to push')
     push_parser.add_argument('-na',action='store_true',help='To avoid the add stage')
+    #for screen sharing purpose
 
     pull_parser=subparsers.add_parser('pull',help='pulls from the branch')
 
