@@ -13,13 +13,12 @@ def main():
     push_parser.add_argument('-t','--time',default=time.strftime("%H:%M", time.localtime()), help='The time you want to push your commit')
     push_parser.add_argument('-f','--file',nargs='+' ,default=None, help='Specific file name to push')
     push_parser.add_argument('-na',action='store_true',help='To avoid the add stage')
+    #for demonstration
 
     pull_parser=subparsers.add_parser('pull',help='pulls from the branch')
 
     origin_parser=subparsers.add_parser('init',help='To add a github repo to a folder')
     origin_parser.add_argument('-u','--url',default=None,help="Add the url to repo")
-    #for screen sharing 
-
 
     args = parser.parse_args()
     execute_command(args)
@@ -39,7 +38,7 @@ def execute_command(args):
     elif command == 'init':
         url=args.url if args.url else None
         gs.add_origin(url)
-        #gitsy demonstration 
+        
 
 
 if __name__ == "__main__":
