@@ -39,6 +39,7 @@ def execute_command(args):
     elif command == 'init':
         url=args.url if args.url else None
         gs.add_origin(url)
+        #gitsy demonstration 
 
 
 if __name__ == "__main__":
