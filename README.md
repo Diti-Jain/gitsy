@@ -118,7 +118,12 @@ gitsy/
 
 Gitsy is a collaborative project by [**Diti Jain**](https://github.com/Diti-Jain) and [**Dev Mehta**](https://github.com/DevMehta-30). Together, we aim to streamline Git workflows for developers.
 
-While this is a joint effort, we’re always open to feedback, suggestions, and contributions from the community. Feel free to open an issue or submit a pull request. Let’s improve Gitsy together!
+We’re always open to feedback, suggestions, and contributions from the community. If you have ideas or suggestions, feel free to send us an email:
+
+- **ditijainj@gmail.com**
+- **dev.a.mehta30@gmail.com**
+
+Alternatively, you can open an issue or submit a pull request directly to the repository. Let’s improve Gitsy together!
 
 ## References
 
