@@ -1,4 +1,4 @@
-# Gitsy:Git CLI made easy
+# Gitsy: Git CLI made easy
 
 **Gitsy** is a command-line tool designed to streamline Git workflows by reducing the complexity of common Git commands into simpler, more intuitive actions. With Gitsy, developers can push, pull, and manage Git repositories with fewer steps, making version control more efficient.
 
@@ -29,7 +29,7 @@ pip install -e .
 
 ## Usage
 
-# Initialize a repository:
+### Initialize a repository:
 
 ```shell
 gitsy init
@@ -37,7 +37,7 @@ gitsy init
 
 This will initialize the current directory as a Git repository.
 
-# Push changes
+### Push changes
 
 ```shell
 gitsy push
@@ -45,7 +45,7 @@ gitsy push
 
 This command combines `git add .`, `git commit -m "Commit Message"`, and `git push` into one. You can also use the following options:
 
-- **-m**:Specify a commit message
+- **-m**: Specify a commit message
 
 ```shell
 gitsy push -m "Commit message"
@@ -61,7 +61,7 @@ gitsy push -b feature-branch
 
 If no branch is provided, Gitsy will push the commit to the current working branch.
 
-- **-t**:Schedule your push for a specific time.
+- **-t**: Schedule your push for a specific time.
 
 ```shell
 gitsy push -t "14:00"
@@ -69,7 +69,7 @@ gitsy push -t "14:00"
 
 If no time is provided, Gitsy will push the commit at the current time.
 
-- **-f**:Push specific files.
+- **-f**: Push specific files.
 
 ```shell
 gitsy push -f file1.txt file2.txt
@@ -78,7 +78,7 @@ gitsy push -f file1.txt file2.txt
 
 If no files are provided, Gitsy will push the commit with adding all the files.
 
-# Pull changes
+### Pull changes
 
 ```shell
 gitsy pull
@@ -86,7 +86,7 @@ gitsy pull
 
 Fetch and pull changes from the specified branch.
 
-# View Help
+### View Help
 
 ```shell
 gitsy --help
@@ -94,7 +94,7 @@ gitsy --help
 
 Get detailed information on Gitsy's commands and options.
 
-### Project Structure
+## Project Structure
 
 ```
 
@@ -108,7 +108,7 @@ gitsy/
 
 ```
 
-### Future Versions
+## Future Versions
 
 - Support for additional Git commands.
 - Improved error handling and logging.
@@ -120,7 +120,7 @@ Gitsy is a collaborative project by [**Diti Jain**](https://github.com/Diti-Jain
 
 While this is a joint effort, we’re always open to feedback, suggestions, and contributions from the community. Feel free to open an issue or submit a pull request. Let’s improve Gitsy together!
 
-### References
+## References
 
 1. [Git Documentation](https://git-scm.com/doc)
 2. [GitHub CLI Documentation](https://cli.github.com/manual/)
